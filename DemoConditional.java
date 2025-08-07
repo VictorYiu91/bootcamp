@@ -70,6 +70,39 @@ public class DemoConditional {
     premium = premium * ((100.0 + percentage)/100.0);
     System.out.println(premium);
   
+    //leap year
+    //divided by 4, -> leap year (i.e. 2024)
+    //divided by 100 -> not a leap year (i.e. 2100, 1900)
+    //divided by 400 -> leap Year (i.e. 2000)
+    //cannot divided by 4 -> not a leap year (i.e. 2025)
+
+    int year = 2400;
+    boolean isLeapYear = false;
+    //My approach
+    if (year % 100 == 0) {
+      if (year % 400 ==0) {
+        isLeapYear = true;
+      }
+    } else {
+      if (year % 4 == 0) {
+        isLeapYear = true;
+      }
+    }
+    System.out.println("Leap Year?" + isLeapYear);
+    //tutor's approach
+    if (year % 4 == 0) {
+      if (year % 100 == 0) {
+        if (year % 400 == 0) {
+          isLeapYear = true;
+        } 
+      } else {
+        isLeapYear = true;
+      }
+    }
+    System.out.println("Leap Year?" + isLeapYear);
+    
+    isLeapYear = year % 4 == 0 && (year % 100 == 0 && year % 400 == 0 || year % 100 != 0 );
+
   }
   }
 
