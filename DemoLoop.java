@@ -74,5 +74,28 @@ public static void main(String[] args) {
     } else {
       System.out.println(targetCh + " is not found");
     }
+    //searching pattern
+    String s2 = "hello";
+    String targetStr = "ell";
+    boolean isMatched = true;
+    boolean isEverMatched = false;
+
+    for (int i = 0 ; i < s2.length() - targetStr.length(); i++) {
+      isMatched = true;
+      for (int j =0 ; j < targetStr.length(); j++) {
+        if (s2.charAt(i + j) != targetStr.charAt(j)) {
+          isMatched = false;
+        }
+      }
+      if (isMatched) {
+        isEverMatched = true;
+      }
+    }
+    if (isEverMatched) {
+      System.out.println("Pattern " + targetStr + " is found.");
+    } else {
+      System.out.println("Pattern " + targetStr + " is not found.");
+    }
+    System.out.println(s2.contains(targetStr)); // true;
 } 
 }
