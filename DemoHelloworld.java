@@ -1,7 +1,7 @@
-public class Helloworld {
+public class DemoHelloworld {
   public static void main(String[] args) {
     System.out.println("hello world");
-    System.out.println("I' Victor");
+    System.out.println("I'm Victor");
     //comment / Notes
     //Java Machine will ignores lines starting with //
     //Data Type (int)
