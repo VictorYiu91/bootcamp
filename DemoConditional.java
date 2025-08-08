@@ -102,9 +102,60 @@ public class DemoConditional {
     System.out.println("Leap Year?" + isLeapYear);
     
     isLeapYear = year % 4 == 0 && (year % 100 == 0 && year % 400 == 0 || year % 100 != 0 );
+    // else-if (use for mutually exclusive case)
+    int score = 85;
+    char grade = ' ';
+    // A: 90 or above
+    // B: 80 - 90
+    // C: 70 - 79
+    // F: < 70
+    if (score >= 90) {
+      grade ='A';
+    } else if (score >= 80 && score < 90) {
+      grade = 'B';
+    } else if (score >= 70 && score < 80) {
+      grade = 'C';
+    } else {grade = 'F';}
+    System.out.println("Grade=" + grade); // Grade = B
 
+    // 1. if-else, if else if-else, if , if-else if
+    // 2. switch
+    // 3. "case" can check equals value ONLY, NO range checking
+    // 4. No AND checking (-> Single condition)
+
+    // Bad Example for switch
+    score = 75;
+    switch(score) {
+      case 91:
+      grade = 'A';
+      case 92:
+      grade = 'A';
+      case 93:
+      grade = 'A';
+      //...
+    }
+    // Good Example for switch
+    // R G B
+    // By default, run all code block afer meet the condition
+    // -> you have to "break" it manually to exit the switch
+    char color = 'R';
+    switch (color) {
+      case 'R':
+      System.out.println("It is red.");
+      break;
+      case 'G':
+      System.out.println("It is green.");
+      break;
+      case 'B':
+      System.out.println("It is blue.");
+      break;
+    }
+    // conclusion:
+    // 1. Finite values (e.g. Weeks, Direction)
+    // 2. Different purpose for different cases
   }
-  }
+}
+
 
 
 

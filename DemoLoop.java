@@ -74,7 +74,7 @@ public static void main(String[] args) {
     } else {
       System.out.println(targetCh + " is not found");
     }
-    //searching pattern
+    //searching pattern (useless, actually use contains())
     String s2 = "hello";
     String targetStr = "ell";
     boolean isMatched = true;
@@ -96,6 +96,38 @@ public static void main(String[] args) {
     } else {
       System.out.println("Pattern " + targetStr + " is not found.");
     }
+
+    // contains() -> Java Method
     System.out.println(s2.contains(targetStr)); // true;
+
+    // print 2, 4, 6, 8, 10
+    // Approach 1
+    for (int i = 1; i < 11; i++) {
+      if (i % 2 == 0) {
+        System.out.println(i);
+      }
+    }
+    // Approach 2: continue
+    for (int i = 1; i < 11; i++) {
+      if (i % 2 != 0) {
+        continue; // go to next iteration -> i++
+      } System.out.println(i);
+    }
+
+    // break -> searching, exit earlier
+    // Search the name contain J character
+    String name = "John";
+    char target1 = 'J';
+    boolean isContainJ = false;
+    for (int i = 0; i < name.length(); i++) { //0-3
+      System.out.println("Test Flow:" + i);
+      if (name.charAt(i) == target1) {
+        isContainJ = true;
+        break; // exit the loop
+      }
+    } if (isContainJ) {
+      System.out.println(target1 + " is found");
+    }
+
 } 
 }
