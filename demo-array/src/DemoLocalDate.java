@@ -7,8 +7,16 @@ public class DemoLocalDate {
     // +1 year
     LocalDate yearEnd = LocalDate.of(1999,12,31);
     LocalDate firstDateOfYear = yearEnd.plusDays(1L);
+    System.out.println(yearEnd.plusMonths(2L)); //2000-02-29
     System.out.println(firstDateOfYear);
     System.out.println(firstDateOfYear.isLeapYear()); // true
-    System.out.println(firstDateOfYear.plusMonths(4L)); //2000-05-01   
+    LocalDate today = LocalDate.now(); // read running machine system time
+    System.out.println(today.getDayOfWeek());
+    System.out.println(today.getYear());
+    System.out.println(today.getMonth().ordinal()); // ordinal:Count from 0 -> 7 (August)
+    System.out.println(today.isAfter(LocalDate.of(2025,8,11))); // true
+    System.out.println(today.isAfter(LocalDate.of(2025,12,11))); // false
+    System.out.println(today.isBefore(LocalDate.of(2025,8,11))); // false
+    System.out.println(today.isBefore(LocalDate.of(2025,12,11))); // true
   }
 }
