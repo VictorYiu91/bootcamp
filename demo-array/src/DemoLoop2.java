@@ -196,5 +196,25 @@ public class DemoLoop2 {
       // str3 += str1.charAt(i) + str2.charAt(i);
       // str3 = str3 + (str1.charAt(i) + str2.charAt(i));
     } System.out.println(str3);
+
+    int x = 4;
+    while (x < 10) {
+      if(x % 2 ==1) {
+        System.out.println(x);
+      } x++;
+    }
+    
+    for (int i = 4 ; i < 5 ; i++) {
+      if(i > 4 && i % 2 == 1) {
+       System.out.println(i);
+      }
+    }
+    int h = 0;
+    while (h < 6) {
+      if (h > 3) {
+        break;
+      } System.out.println(h);
+      h++;
+    }
   }
 }

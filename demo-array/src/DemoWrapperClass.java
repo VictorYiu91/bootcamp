@@ -62,10 +62,11 @@ public class DemoWrapperClass {
     System.out.println(x5.longValue()>l5.longValue());
     // upcast is safe more than downcast; int -> long better than long -> int
 
-    // Characte (ASCII)
+    // Character (ASCII)
     Character ch3 ='b';
     System.out.println(ch3.charValue() > 97); // OK
     System.out.println(ch3.compareTo(Character.valueOf('b')));
+
 
   }
 }
