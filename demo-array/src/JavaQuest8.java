@@ -15,14 +15,15 @@ public class JavaQuest8 {
     // code here ...
     int backup = 0;
     for (int i = 0; i < testCase4.length -1 ; i++) {
+      if (i > 1) {
+        break;
+      }
       for (int j = 0; j < testCase4.length -1 - i ; j++) {
         if (testCase4[j] > testCase4[j+1]) {
         backup = testCase4[j];
         testCase4[j] = testCase4[j+1];
         testCase4[j+1] = backup;
       }
-      } if (i > 1) {
-        break;
       }
     }
     secondMax = testCase4[testCase4.length-2];
