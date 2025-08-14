@@ -105,6 +105,5 @@ public class DemoString {
     String s8 = "";
     System.out.println(s8.isEmpty()); // true
     System.out.println(s8.isBlank()); // true
-
   }
 }

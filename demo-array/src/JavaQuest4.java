@@ -17,7 +17,7 @@ public class JavaQuest4 {
         counter++;
         System.out.println(i);
       }
-      if (counter >= 10) {
+      if (counter == 10) {
         break;
       }
     }
