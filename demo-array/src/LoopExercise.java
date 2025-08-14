@@ -190,7 +190,11 @@ public class LoopExercise {
     // 17. Add value 0.1 to each of value in array arr16
     // Print: [0.3, 0.4, 0.7]
     // Use: BigDecimal
-
+    for (int i = 0; i < arr16.length; i++) {
+      BigDecimal bd = new BigDecimal(String.valueOf(arr16[i]));
+      bd = bd.add(new BigDecimal("0.1"));
+      arr16[i] = bd.floatValue();
+    } System.out.println(Arrays.toString(arr16));
 
     // 18. Count the number of target strings in the String[]
     String[] arr18 = new String[] {"Steve", "Tommy", "Katie", "Tommy", "Lydia"};
