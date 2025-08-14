@@ -5,27 +5,27 @@ public class LoopExercise {
   public static void main(String[] args) {
     // 1. Print 6 times hello
     // Use: for loop
-    for (int i = 0;  i < 6; i++) {
+    for (int i = 0; i < 6; i++) {
       System.out.println("hello");
     }
-    
+
     // 2. Expected output: "0,1,2,3,4"
     // Use: for loop
-    for (int i = 0; i < 5 ; i++) {
+    for (int i = 0; i < 5; i++) {
       System.out.println(i);
     }
 
     // 3. Print even numbers between 2 and 20
     // Use: for loop + if
-    for (int i = 1; i <= 20 ; i++) {
-      if (i % 2 ==0) {
+    for (int i = 1; i <= 20; i++) {
+      if (i % 2 == 0) {
         System.out.println(i);
       }
     }
 
     // 4. Print the numbers between 1 and 100, which can be divided by 3 or 5
     // Use: for loop + if
-    for (int i = 1; i <=100; i++) {
+    for (int i = 1; i <= 100; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
         System.out.println(i);
       }
@@ -36,8 +36,8 @@ public class LoopExercise {
     int sum = 0;
     for (int i = 0; i <= 15; i++) {
       sum += i;
-        }
-        System.out.println(sum);
+    }
+    System.out.println(sum);
 
     // 6. sum up all odd numbers betwen 0 - 10
     // Sum up all even numbers betwen 0 - 10
@@ -61,7 +61,7 @@ public class LoopExercise {
     char targetCh = 'd';
     boolean isFound = false;
     for (int i = 0; i < str7.length(); i++) {
-      if (str7.charAt(i)==targetCh) {
+      if (str7.charAt(i) == targetCh) {
         isFound = true;
         break;
       }
@@ -80,7 +80,7 @@ public class LoopExercise {
     String s8b = "cba";
     boolean isSubstring = false;
     for (int i = 0; i < s8a.length() - s8b.length() + 1; i++) {
-      if (s8a.substring(i,i+3).equals(s8b)) {
+      if (s8a.substring(i, i + 3).equals(s8b)) {
         isSubstring = true;
       }
     }
@@ -100,28 +100,31 @@ public class LoopExercise {
       if (s9.charAt(i) == c9) {
         count++;
       }
-    } System.out.println("count="+count);
+    }
+    System.out.println("count=" + count);
 
     // 10. Replace all char value 'x' in the given String array by 'k'
     // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
     // Use: for loop + replace method
     String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
-    for (int i = 0 ; i < arr10.length ; i++) {
+    for (int i = 0; i < arr10.length; i++) {
       if (arr10[i].contains("x")) {
         arr10[i] = arr10[i].replace("x", "k");
       }
-    } System.out.println(Arrays.toString(arr10));
+    }
+    System.out.println(Arrays.toString(arr10));
 
     // 11. Count the number of Uppercase char value in the given string s11
     // Print "count uppercase=4"(
     // Use: for loop + if
     String s11 = "kLKloOOu";
     int countUpperCase = 0;
-    for (int i = 0; i < s11.length() ; i++) {
+    for (int i = 0; i < s11.length(); i++) {
       if (s11.charAt(i) >= 'A' && s11.charAt(i) <= 'Z') {
         countUpperCase++;
       }
-    } System.out.println("count uppercase=" + countUpperCase);
+    }
+    System.out.println("count uppercase=" + countUpperCase);
 
     // 12. Print the following pattern of * value
     // *****
@@ -129,8 +132,9 @@ public class LoopExercise {
     // *****
     String value = "*";
     for (int i = 0; i < 3; i++) {
-      System.out.println(value.concat(value).concat(value).concat(value).concat(value));
-      };
+      System.out.println(
+          value.concat(value).concat(value).concat(value).concat(value));
+    } ;
 
     // 13. Given a string value s13, each of the char value has its score.
     // Calculate the total score
@@ -145,17 +149,23 @@ public class LoopExercise {
     int totalScore = 0;
     for (int i = 0; i < s13.length(); i++) {
       switch (s13.charAt(i)) {
-        case 'l': totalScore += 1;
-        break;
-        case 'r': totalScore += 3;
-        break;
-        case 'd': totalScore += 2;
-        break;
-        case 'u': totalScore += 4;
-        break;
-        default: totalScore -= 1;
+        case 'l':
+          totalScore += 1;
+          break;
+        case 'r':
+          totalScore += 3;
+          break;
+        case 'd':
+          totalScore += 2;
+          break;
+        case 'u':
+          totalScore += 4;
+          break;
+        default:
+          totalScore -= 1;
       }
-    } System.out.println(totalScore);
+    }
+    System.out.println(totalScore);
 
     // 14. Assign the long values of 1, 4, 9, -4 to the given array arr14
     long[] arr14 = new long[4];
@@ -171,10 +181,11 @@ public class LoopExercise {
       if (arr14[i] > max) {
         max = arr14[i];
       }
-    } System.out.println(max);
+    }
+    System.out.println(max);
 
     // 16. Declare a float value (arr16) array with value 0.2, 0.3, 0.6
-    float[] arr16 = new float [] {0.2f, 0.3f, 0.6f};
+    float[] arr16 = new float[] {0.2f, 0.3f, 0.6f};
 
     // 17. Add value 0.1 to each of value in array arr16
     // Print: [0.3, 0.4, 0.7]
@@ -190,7 +201,8 @@ public class LoopExercise {
       if (arr18[i] == target) {
         countName++;
       }
-    } System.out.println("count name=" + countName);
+    }
+    System.out.println("count name=" + countName);
 
     // 19. swap the max digit and min digit
     // Assumption: each digit value appear once in the String
@@ -204,25 +216,26 @@ public class LoopExercise {
       if (s19.charAt(i) >= s19Max) {
         s19Max = s19.charAt(i);
         indexOfMax = i;
-      }
-    }
-    for (int i = 0; i < s19.length(); i++) {
-      if (s19.charAt(i) <= s19Min) {
+      } else if (s19.charAt(i) <= s19Min) {
         s19Min = s19.charAt(i);
         indexOfMin = i;
       }
-    } 
+    }
+    System.out.println(s19.replace(s19.charAt(indexOfMax), 'x')
+        .replace(s19.charAt(indexOfMin), s19Max).replace('x', s19Min));
 
     // 20. Find the longest String in the String array
     // Print "longest=programming"
-    String[] arr20 = new String[] {"python", "array", "programming", "java", "bootcamp"};
+    String[] arr20 =
+        new String[] {"python", "array", "programming", "java", "bootcamp"};
     int longestLength = 0;
     String longest = "";
-    for (int i = 0; i < arr20.length ; i++) {
+    for (int i = 0; i < arr20.length; i++) {
       if (arr20[i].length() > longestLength) {
         longestLength = arr20[i].length();
         longest = arr20[i];
-      } 
-    } System.out.println("longest="+longest);
+      }
+    }
+    System.out.println("longest=" + longest);
   }
 }
