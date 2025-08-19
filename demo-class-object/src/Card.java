@@ -21,6 +21,12 @@ public class Card {
   public String getSuit() {
     return this.suit;
   }
+  public String toString() {
+    return "Card(" //
+    + "rank=" + this.rank //
+    + ",suit=" + this.suit //
+    + ")";
+  }
 
   public static void main(String[] args) {
     // new Card();

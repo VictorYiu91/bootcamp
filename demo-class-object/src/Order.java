@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class Order {
   private Item[] items;
+  // One to Many -> Array -> Constructor (length 0 object), add/remove(alternative), No Setter, getter
 
   public Order() {
     // ! initial load of creating object

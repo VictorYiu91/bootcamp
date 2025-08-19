@@ -32,12 +32,6 @@ public class Hand {
 
   }
 
-  // public boolean isFullHouse() {
-  // boolean isFullHouse = true;
-  // }
-
   public static void main(String[] args) {
-    Hand h1 = new Hand();
-    System.out.println(Arrays.toString());
   }
 }

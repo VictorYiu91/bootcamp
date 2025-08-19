@@ -22,6 +22,15 @@ public class Person {
   public String getName() {
     return this.name;
   }
+  // instance method
+  public boolean isElderly() {
+    return this.age > 65;
+  }
+  // static method
+  public static boolean isElderly(Person person) {
+    return person.getAge() > 65; 
+  }
+
   public static void main(String[] args) {
     // new -> create object
     // Person -> class name

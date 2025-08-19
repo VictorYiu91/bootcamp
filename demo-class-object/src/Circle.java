@@ -31,6 +31,14 @@ public class Circle {
         .doubleValue();
   }
 
+  public static double getArea(int radius) {
+    return BigDecimal.valueOf(radius) //
+        .multiply(BigDecimal.valueOf(radius)) //
+        .multiply(BigDecimal.valueOf(Math.PI)) //
+        .doubleValue();
+
+  }
+
   public static void main(String[] args) {
     // create circle object
     // set radius 3.3
