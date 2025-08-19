@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class Hero {
   // Health point (hp)
   // Maximum Health point (maxHp)
@@ -15,15 +17,24 @@ public class Hero {
       new int[] {10, 15, 20, 25, 30, 35, 40, 45, 50, 55};
   private static final int[] PHY_DEFENSE =
       new int[] {3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+  private static final double[] MAX_EXP = // exp for level up
+      new double[] {3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0};
+  private static final double[] EXP_GAINED = // exp gained from enemy
+      new double[] {1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5};
+  private static int idCounter = 0;
+  private int id;
   private int hp;
   private int mp;
   private int level;
+  private double exp;
   private String name;
 
   public Hero(String name) {
+    this.id = ++idCounter;
     this.level = 1;
     this.hp = MAX_HP[0];
     this.mp = MAX_MP[0];
+    this.exp = 0;
     this.name = name;
   }
 
@@ -37,6 +48,10 @@ public class Hero {
 
   public int getLevel() {
     return this.level;
+  }
+
+  public double getExp() {
+    return this.exp;
   }
 
   // instance method getMaxHP()
@@ -55,8 +70,12 @@ public class Hero {
     return getPAtk(this.level); // goes to static method below
   }
 
-    public int getPD() {
-    return PHY_DEFENSE[this.level-1];
+  public int getPD() {
+    return PHY_DEFENSE[this.level - 1];
+  }
+
+  public int getId() {
+    return this.id;
   }
 
   public boolean isAlive() {
@@ -64,8 +83,18 @@ public class Hero {
   }
 
   public void levelUp() {
-    this.level += 1;
-    this.hp += 20;
+    this.level++;
+    this.recoverHp();
+    this.recoverMp();
+    this.exp = 0;
+  }
+
+  public void recoverHp() {
+    this.hp = MAX_HP[this.level - 1];
+  }
+
+  public void recoverMp() {
+    this.hp = MAX_MP[this.level - 1];
   }
 
   public void deductHp(int deductedHp) {
@@ -78,12 +107,20 @@ public class Hero {
   }
 
   public void attack(Hero hero) {
-    int deductedHp = Math.max(this.getPAtk() - hero.getPD() , 0);
+    int deductedHp = Math.max(this.getPAtk() - hero.getPD(), 0);
     hero.deductHp(deductedHp);
+    if (!hero.isAlive()) {
+      double addedExp = calcAddedExp(hero.getLevel());
+      this.exp = BigDecimal.valueOf(this.exp).add(BigDecimal.valueOf(addedExp))
+          .doubleValue();
+      if (this.exp >= MAX_EXP[this.level - 1]) {
+        this.levelUp();
+      }
+    }
   }
 
-  public void recoverHp() {
-    this.hp = MAX_HP[this.level - 1];
+  public boolean equals(Hero hero) {
+    return this.id == hero.getId();
   }
 
   // Static method getMaxHP
@@ -103,6 +140,10 @@ public class Hero {
     if (level < 1 || level > MAX_HP.length)
       return -1;
     return PHY_ATTACK[level - 1];
+  }
+
+  public static double calcAddedExp(int killedheroLevel) {
+    return EXP_GAINED[killedheroLevel - 1];
   }
 
   public String status() { // toString
