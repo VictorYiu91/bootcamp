@@ -1,5 +1,4 @@
 package inheritance;
-import inheritance.Animal;
 
 public class Dog extends Animal {
   private boolean isMale;
