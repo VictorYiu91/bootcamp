@@ -1,3 +1,4 @@
+package method;
 public class Calculator {
   private int x;
   private int y;

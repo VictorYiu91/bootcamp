@@ -1,3 +1,4 @@
+package method;
 // Java: Object Oriented Programming (OOP), C++, C#, etc.
 // Blueprint
 // 我地要描述既世界既Person，佢地淨係得Name和Age

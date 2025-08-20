@@ -1,3 +1,4 @@
+package poker;
 public class Card {
   private int rank; // 1 - 13
   private String suit; // "DIAMOND", "SPADE", "HEART", "CLUB"

@@ -1,3 +1,4 @@
+package inheritance;
 import java.math.BigDecimal;
 
 public class Circle extends Shape {

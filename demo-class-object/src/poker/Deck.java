@@ -1,3 +1,4 @@
+package poker;
 public class Deck {
   // Static Variable (like Dictionary)
   public static final int[] RANKS = // static = share to all object, final = cannot change afteward

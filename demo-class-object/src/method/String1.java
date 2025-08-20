@@ -1,3 +1,4 @@
+package method;
 public class String1 {
   private char[] chs;
 

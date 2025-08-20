@@ -1,4 +1,6 @@
+package inheritance;
 import java.math.BigDecimal;
+import inheritance.Circle;
 
 public abstract class Shape {
   private String color;

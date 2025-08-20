@@ -1,3 +1,4 @@
+package method;
 public class EmailValidData {
   private String email;
 

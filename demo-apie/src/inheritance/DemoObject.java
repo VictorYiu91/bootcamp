@@ -1,4 +1,8 @@
+package inheritance;
 // ! In Java, all classes by default implicitly extends Object.class
+
+import inheritance.Animal;
+
 public class DemoObject {
   public static void main(String[] args) {
     Object o1 = new Object(); // Object.class is a concrete class

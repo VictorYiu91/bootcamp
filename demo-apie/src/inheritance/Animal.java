@@ -1,3 +1,4 @@
+package inheritance;
 // A - Abstraction (Interface)
 // P - Polymorphism
 // !! I - Inheritance

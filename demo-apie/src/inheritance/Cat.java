@@ -1,3 +1,6 @@
+package inheritance;
+import inheritance.Animal;
+
 public class Cat extends Animal { // Child (Cat), Parent (Animal)
   // ! Inherit
   // 1. Attributes

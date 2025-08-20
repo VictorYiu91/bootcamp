@@ -1,3 +1,4 @@
+package method;
 public class Student {
   private static int score = 100;
   private String name;

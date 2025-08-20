@@ -1,3 +1,4 @@
+package library;
 public class Library {
   // books
   private Book[] books;
