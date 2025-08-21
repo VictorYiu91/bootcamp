@@ -46,4 +46,11 @@ public abstract class Animal {
   public String intro() {
     return "This is " + this.name + ", and " + this.age + " years old.";
   }
+  @Override
+  public String toString() {
+    return "Animal("//
+    +"name=" + this.name //
+    +",age=" + this.age //
+    +")";
+  }
 }

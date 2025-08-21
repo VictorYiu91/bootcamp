@@ -2,8 +2,8 @@ public class DemoStringBuilder {
   public static void main(String[] args) {
     // Good Performance
     StringBuilder sb = new StringBuilder("");
-    sb.append("a"); // similar to setter
-    sb.append("b"); // similar to setter
+    sb.append('a'); // similar to setter
+    sb.append('b'); // similar to setter
     System.out.println(sb.toString()); //ab
 
     String str = "";

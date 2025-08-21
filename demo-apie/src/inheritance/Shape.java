@@ -20,6 +20,10 @@ public abstract class Shape {
   }
 
   public static void main(String[] args) {
+
+    // ! Why do we need Parent Class
+    // 1. Inheritance -> Polymorphism -> Encapsulation
+    // Advantage: Maintainance
     Shape s1 = new Circle(3.5, "RED");
     Shape s2 = new Square(8.0, "BLACK");
     Shape s3 = new Square(4.0, "BLUE");
