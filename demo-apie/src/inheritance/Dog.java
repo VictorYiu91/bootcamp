@@ -19,15 +19,14 @@ public class Dog extends Animal {
     if (!(obj instanceof Dog))
       return false;
     Dog dog = (Dog) obj;
-    return super.getName().equals(dog.getName()) //
-        && super.getAge() == dog.getAge() //
-        && this.isMale == dog.isMale();
+    return this.isMale == dog.isMale() //
+        && super.getName().equals(dog.getName()) //
+        && super.getAge() == dog.getAge();
   }
 
   public static void main(String[] args) {
-    Dog d1 = new Dog("Happy", 8, true);
-    System.out.println(d1.getAge());
-    Dog d2 = new Dog("Cookie", 4, false);
-    System.out.println(d2.isMale());
+    Dog d1 = new Dog("John", 3, false);
+    Dog d2 = new Dog("Peter", 4, true);
+    System.out.println(d1.isMale());
   }
 }

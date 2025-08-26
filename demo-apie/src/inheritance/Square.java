@@ -2,25 +2,21 @@ package inheritance;
 import java.math.BigDecimal;
 
 public class Square extends Shape {
-  private double side;
+  private double length;
 
-  public Square(double side, String color) {
+  public Square(double length, String color) {
     super(color);
-    this.side = side;
+    this.length = length;
+  }
+
+  public double getLength() {
+    return this.length;
   }
 
   @Override
   public double area() {
-    return BigDecimal.valueOf(this.side) //
-        .multiply(BigDecimal.valueOf(this.side)) //
+    return BigDecimal.valueOf(this.length) //
+        .multiply(BigDecimal.valueOf(this.length)) //
         .doubleValue();
-  }
-
-  public void setSide(double side) {
-    this.side = side;
-  }
-
-  public double getSide() {
-    return this.side;
   }
 }

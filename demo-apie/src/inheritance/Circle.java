@@ -9,17 +9,20 @@ public class Circle extends Shape {
     super(color);
     this.radius = radius;
   }
-  public void setRadius(double radius) {
-    this.radius = radius;
-  }
-  public double getRaduis() {
-    return this.radius;
-  }
+
   @Override
   public double area() {
-    return BigDecimal.valueOf(this.radius)//
-    .multiply(BigDecimal.valueOf(this.radius))//
-    .multiply(BigDecimal.valueOf(Math.PI))//
-    .doubleValue();
+    return BigDecimal.valueOf(this.radius) //
+        .multiply(BigDecimal.valueOf(this.radius)) //
+        .multiply(BigDecimal.valueOf(Math.PI)) //
+        .doubleValue();
+  }
+
+  public double getRadius() {
+    return this.radius;
+  }
+
+  public void setRadius(double radius) {
+    this.radius = radius;
   }
 }

@@ -2,23 +2,14 @@ package hero;
 
 import java.math.BigDecimal;
 
-public abstract class Hero {
-  abstract int getMaxHp();
-
-  abstract int getMaxMp();
-
-  abstract int getPA();
-
-  abstract int getPD();
-
-  abstract int getMA();
-
-  abstract int getMD();
-
-  abstract int getAG();
-
-  abstract int getCC();
-
+public abstract class HeroBackUp {
+  // Health point (hp)
+  // Maximum Health point (maxHp)
+  // Attack point (atk)
+  // Starting level -> Level 1
+  // Level 1 : Attack Point: 10, MAX HP: 20
+  // Level up: + 5 Attack pt & 20 MAX HP / per level
+  // HP = 0 -> Die
 
   public static int idCounter = 0;
   private int id;
@@ -27,9 +18,9 @@ public abstract class Hero {
   private int level;
   private double exp;
   private String playerName;
-  public boolean weaponOn;
+  private boolean weaponOn;
 
-  public Hero(String playerName) {
+  public HeroBackUp(String playerName) {
     this.id = ++idCounter;
     this.level = 1;
     this.hp = this.getMaxHp();
@@ -55,6 +46,42 @@ public abstract class Hero {
     return this.exp;
   }
 
+  // instance method getMaxHP()
+  public int getMaxHp() {
+    // if (this.level < 1 || this.level > MAX_HP.length)
+    // return -1;
+    // return MAX_HP[this.level - 1];
+    return Heros.getMaxHp(this.level); // <--goes to static method below
+  }
+
+  public int getMaxMp() {
+    return Heros.getMaxMp(this.level); // goes to static method below
+  }
+
+  public int getPA() {
+    return Heros.getPA(this.level); // goes to static method below
+  }
+
+  public int getPD() {
+    return Heros.getPD(this.level);
+  }
+
+  public int getMA() {
+    return Heros.getMD(this.level);
+  }
+
+  public int getMD() {
+    return Heros.getMD(this.level);
+  }
+
+  public int getAG() {
+    return Heros.getAG(this.level);
+  }
+
+  public int getCC() {
+    return Heros.getCC(this.level);
+  }
+
   public int getId() {
     return this.id;
   }
@@ -71,11 +98,11 @@ public abstract class Hero {
   }
 
   public void recoverHp() {
-    this.hp = this.getMaxHp();
+    this.hp = Heros.MAX_HP[this.level - 1];
   }
 
   public void recoverMp() {
-    this.mp = this.getMaxMp();
+    this.mp = Heros.MAX_MP[this.level - 1];
   }
 
   public void deductHp(int deductedHp) {
@@ -114,11 +141,11 @@ public abstract class Hero {
 
 
   public String status() { // toString
-    return "Hero Name = " + this.playerName + " (" //
-        + "Lv." + this.level //
-        + " ,HP = " + this.hp//
-        + " ,MP = " + this.mp//
-        + ")";
+    return "Hero Name = " + this.playerName +" (" //
+    +"Lv."+this.level //
+    +" ,HP = " + this.hp//
+    +" ,MP = " + this.mp//
+    +")"; 
   }
 
   public static void main(String[] args) {}
