@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class DemoArrayList {
   public static void main(String[] args) {
@@ -67,9 +68,12 @@ public class DemoArrayList {
     for (Cat cat: cats) {
       System.out.println(cat.getName());
     }
+    // ! Interface: List
+    // Polymorphism: List is an interface of ArrayList, List<X> is also the interface of ArrayList<X>
+    List<String> names2 = new ArrayList<>();
+    names2.add("John");
+    names2.add("Sue");
 
-
-
-
+    
   }
 }
