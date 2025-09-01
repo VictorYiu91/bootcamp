@@ -1,5 +1,5 @@
 package hero;
 
-public class Sword {
+public class Sword extends Weapon{
   
 }
