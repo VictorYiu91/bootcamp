@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import generic.Ball;
+import generic.Color;
+import generic.Passenger;
 
 public class DemoSorting {
   public static void main(String[] args) {

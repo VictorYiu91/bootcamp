@@ -1,4 +1,6 @@
 import java.util.Comparator;
+import generic.Ball;
+import generic.Color;
 
 public class SortByColorBRY implements Comparator<Ball> {
   @Override

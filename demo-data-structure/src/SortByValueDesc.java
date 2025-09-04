@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import generic.Ball;
 
 // Write a class representing a sorting formula for a specific object
 public class SortByValueDesc implements Comparator<Ball> {
