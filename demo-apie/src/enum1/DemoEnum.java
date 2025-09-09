@@ -1,7 +1,5 @@
 package enum1;
 
-import shop.Order;
-
 public class DemoEnum {
   public static void main(String[] args) {
     Book b1 = new Book(1, Color.RED);
