@@ -39,7 +39,6 @@ public class DemoOptional {
     // System.out.println(concat(null,"world")); // caller
 
     // ! Return Type -> Optional -> Searching
-    // ! Return Type -> Optional -> Searching
     System.out.println(findByBookName2("IJK"));
     Optional<Book> targetBook = findByBookName2("OPQ");
     if (targetBook.isPresent()) {
