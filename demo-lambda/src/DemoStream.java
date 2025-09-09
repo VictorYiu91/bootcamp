@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class DemoStream {
@@ -96,7 +97,44 @@ public class DemoStream {
         .map(p -> p.getName()) // stream<String>
         .collect(Collectors.toList()); // List<String>
     System.out.println(namesList);
+
+    // ! Termination Operation
+    // collect(), forEach(), count()
+    List<String> names2 = new ArrayList<>();
+    names2.add("John");
+    names2.add("Peter");
+    long count = names2.stream()//
+        .filter(e -> e.length() > 3)//
+        .map(e -> e + "!!!")//
+        .count();
+    System.out.println(count); // 2
+
+    // ! Intermediate Operation (return stream<>)
+    // filter(), map(), distinct(), sort()
+
+    // Generate 6 unqiue randion number betweern 1 - 49
+    List<Integer> marksixList = new ArrayList<>();
+    while (marksixList.size() < 6) {
+      int num = new Random().nextInt(49)+1;
+      if (!marksixList.contains(num)) {
+        marksixList.add(num);
+      }
+    } System.out.println(marksixList);
+
+    // distinct()
+    List<Character> characters = new ArrayList<>();
+    characters.add('b');
+    characters.add('A');
+    characters.add('b');
+
+    List<Character> uniqueCharacters = characters.stream() // Stream<Character>
+    .distinct() // remove duplicated (equals())
+    .collect(Collectors.toList());
+    System.out.println(uniqueCharacters);
+
   }
+
+
 
   public static class Person {
     private String name;
