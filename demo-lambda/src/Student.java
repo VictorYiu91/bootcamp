@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 public class Student {
   private int age;
 

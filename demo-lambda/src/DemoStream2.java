@@ -87,5 +87,51 @@ public class DemoStream2 {
     // !
     boolean hasNegativeThree = Stream.of(10, 9, -3, 6).anyMatch(e -> e == -3);
     System.out.println(hasNegativeThree);
+
+    // ! flatMap
+    List<List<String>> namesList = new ArrayList<>();
+    List<String> names1 = new ArrayList<>();
+    names1.add("John");
+    names1.add("Steven");
+    List<String> names2 = new ArrayList<>();
+    names2.add("Jennie");
+    names2.add("Nico");
+    namesList.add(names1);
+    namesList.add(names2);
+    List<String> names = namesList.stream() //
+        .flatMap(e -> e.stream()) //
+        .collect(Collectors.toList());
+    System.out.println(names);
+
+    List<Member> members = new ArrayList<>();
+    Member m1 = new Member();
+    Member m2 = new Member();
+    m1.add("ABC");
+    m1.add("DEF");
+    m2.add("ABC");
+    m2.add("DEF");
+    m2.add("DEF");
+    members.add(m1);
+    members.add(m2);
+    List<String> allAddresses = members.stream()//
+        .flatMap(e -> e.getAddresses().stream())//
+        .collect(Collectors.toList());
+    System.out.println(allAddresses);
+  }
+
+  public static class Member {
+    private List<String> addresses;
+
+    public Member() {
+      this.addresses = new ArrayList<>();
+    }
+
+    public boolean add(String address) {
+      return this.addresses.add(address);
+    }
+
+    public List<String> getAddresses() {
+      return this.addresses;
+    }
   }
 }
